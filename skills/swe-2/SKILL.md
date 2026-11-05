@@ -139,6 +139,11 @@ Then read the run, in this order:
 For two attempts, repeat with a second worktree and output directory. Continue the latest
 session in the same worktree with `devin -c -p "<next instruction>"` and the same flags.
 
+Run SWE-2 in parallel. It is free right now, so use it freely and do not ration runs: split work
+into independent tasks and start one run per task, each in its own worktree, instead of queuing them
+or packing them into one big run. Keep tasks apart when they touch the same files, because their diffs
+will conflict when you merge them. Benchmarks ran 4 at once with no limit errors. Check every result as usual.
+
 ## Traps
 
 - **`--sandbox` with `-p`:** it replaces `--permission-mode dangerous` with its own
